@@ -361,6 +361,7 @@ int string app_name 0x7f0a000d
 int string image 0x7f0a0016
 int string navigation_drawer_close 0x7f0a0013
 int string navigation_drawer_open 0x7f0a0012
+int string play_sound 0x7f0a0017
 int string title_section1 0x7f0a000e
 int string title_section2 0x7f0a000f
 int string title_section3 0x7f0a0010
