@@ -4,10 +4,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.concurrent.ExecutionException;
 
+import ssk.project.studiodemo.GetBitmapFromURL.onTaskComplete;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,15 +18,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> implements GetBitmapFromURL.onTaskComplete {
+public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> {
 	private final Context mContext;
 	private final String[] values;
-	Bitmap bitmap;
+	public static Bitmap bitmap = null;
 
 	public Custom_Image_ArrayAdapter(Context context, String[] values) {
 		super(context, R.layout.custom_row, values);
 		mContext = context;
 		this.values = values;
+		GetBitmapFromURL bitmapTask = new GetBitmapFromURL();
+		bitmapTask.execute("http://sokim209.appspot.com/images/flower2.jpg");
 	}
 
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -32,33 +37,43 @@ public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> implements G
 		TextView textView = (TextView) rowView.findViewById(R.id.label);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.image_view_1);
 		textView.setText(values[position]);
-		GetBitmapFromURL getImages = new GetBitmapFromURL();
-		getImages.setOnTaskComplete(this);
-		getImages.execute("http://sokim209.appspot.com/images/flower2.jpg");
-//		imageView.setImageBitmap(bitmap);
-		imageView.setImageResource(R.drawable.pencil);
+		GetBitmapFromURL bitmapTask = new GetBitmapFromURL();
+		try {
+			bitmap = bitmapTask.execute("http://sokim209.appspot.com/images/flower2.jpg").get();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		imageView.setImageBitmap(bitmap);
+//		imageView.setImageResource(R.drawable.pencil);
 		return rowView;
 	}
 	
-	public static Bitmap getBitmapFromURL(String src) {
-        try {
-            URL url = new URL(src);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-//            connection.setDoInput(true);
-//            connection.connect();
-            InputStream input = connection.getInputStream();
-            Bitmap myBitmap = BitmapFactory.decodeStream(input);
-            return myBitmap;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
+	public class GetBitmapFromURL extends AsyncTask<String, Void, Bitmap> {
 
-	@Override
-	public void getImage(Bitmap bitmap) {
-		this.bitmap = bitmap;
+		Bitmap myBitmap;
+		
+		@Override
+		protected Bitmap doInBackground(String... params) {
+			try {
+	            URL url = new URL(params[0]);
+	            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+	            connection.setDoInput(true);
+	            connection.connect();
+	            InputStream input = connection.getInputStream();
+	            myBitmap = BitmapFactory.decodeStream(input);
+	            return myBitmap;
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	            return null;
+	        }
+		}	
+		
 	}
+
 }
 
 

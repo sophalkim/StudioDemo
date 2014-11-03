@@ -14,7 +14,7 @@ public class GetBitmapFromURL extends AsyncTask<String, Void, Bitmap> {
 	Bitmap myBitmap;
 	onTaskComplete listener;
 	
-	public void setOnTaskComplete(onTaskComplete listener) {
+	public GetBitmapFromURL(onTaskComplete listener) {
 		this.listener = listener;
 	}
 	
