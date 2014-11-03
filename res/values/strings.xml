@@ -17,5 +17,6 @@
     <string name="action_settings">Settings</string>
     <string name="image">random image</string>
     <string name="play_sound">Play Sound</string>
+    <string name="extract_file">Extract File</string>
 
 </resources>
