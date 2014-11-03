@@ -12,6 +12,11 @@ import android.os.AsyncTask;
 public class GetBitmapFromURL extends AsyncTask<String, Void, Bitmap> {
 
 	Bitmap myBitmap;
+	onTaskComplete listener;
+	
+	public void setOnTaskComplete(onTaskComplete listener) {
+		this.listener = listener;
+	}
 	
 	@Override
 	protected Bitmap doInBackground(String... params) {
@@ -27,6 +32,11 @@ public class GetBitmapFromURL extends AsyncTask<String, Void, Bitmap> {
             e.printStackTrace();
             return null;
         }
+	}
+	
+	@Override
+	protected void onPostExecute(Bitmap bitmap) {
+		listener.getImage(myBitmap);
 	}
 	
 	public interface onTaskComplete {

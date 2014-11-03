@@ -15,9 +15,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> {
+public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> implements GetBitmapFromURL.onTaskComplete {
 	private final Context mContext;
 	private final String[] values;
+	Bitmap bitmap;
 
 	public Custom_Image_ArrayAdapter(Context context, String[] values) {
 		super(context, R.layout.custom_row, values);
@@ -32,7 +33,8 @@ public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> {
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.image_view_1);
 		textView.setText(values[position]);
 		GetBitmapFromURL getImages = new GetBitmapFromURL();
-		Bitmap bitmap = getImages.execute("http://sokim209.appspot.com/images/flower2.jpg");
+		getImages.setOnTaskComplete(this);
+		getImages.execute("http://sokim209.appspot.com/images/flower2.jpg");
 		imageView.setImageBitmap(bitmap);
 		return rowView;
 	}
@@ -51,6 +53,11 @@ public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> {
             return null;
         }
     }
+
+	@Override
+	public void getImage(Bitmap bitmap) {
+		this.bitmap = bitmap;
+	}
 }
 
 
