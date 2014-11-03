@@ -6,6 +6,11 @@
     <string name="title_section2">ListView</string>
     <string name="title_section3">Parse JSON</string>
     <string name="title_section4">Play Sound</string>
+    <string name="title_section5">Play Music</string>
+    <string name="title_section6">Reddit Images</string>
+    <string name="title_section7">App Engine</string>
+    <string name="title_section8">MySQL</string>
+    <string name="title_section9">SqlLite</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>

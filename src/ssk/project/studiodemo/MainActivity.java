@@ -127,7 +127,12 @@ public class MainActivity extends ActionBarActivity implements
 				R.drawable.flower1,
 				R.drawable.flower2,
 				R.drawable.tiger,
-				R.drawable.flower1
+				R.drawable.flower1,
+				R.drawable.flower2,
+				R.drawable.tiger,
+				R.drawable.flower1,
+				R.drawable.flower2,
+				R.drawable.tiger,
 		};
 
 		/**
