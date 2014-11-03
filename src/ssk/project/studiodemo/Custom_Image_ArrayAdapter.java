@@ -6,7 +6,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.ExecutionException;
 
-import ssk.project.studiodemo.GetBitmapFromURL.onTaskComplete;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -21,14 +20,15 @@ import android.widget.TextView;
 public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> {
 	private final Context mContext;
 	private final String[] values;
-	public static Bitmap bitmap = null;
+	public static Bitmap bitmap1 = null;
+	public static Bitmap bitmap2 = null;
+	public static Bitmap bitmap3 = null;
 
 	public Custom_Image_ArrayAdapter(Context context, String[] values) {
 		super(context, R.layout.custom_row, values);
 		mContext = context;
 		this.values = values;
-		GetBitmapFromURL bitmapTask = new GetBitmapFromURL();
-		bitmapTask.execute("http://sokim209.appspot.com/images/flower2.jpg");
+		getImages();
 	}
 
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -37,20 +37,22 @@ public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> {
 		TextView textView = (TextView) rowView.findViewById(R.id.label);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.image_view_1);
 		textView.setText(values[position]);
-		GetBitmapFromURL bitmapTask = new GetBitmapFromURL();
-		try {
-			bitmap = bitmapTask.execute("http://sokim209.appspot.com/images/flower2.jpg").get();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		imageView.setImageBitmap(bitmap);
+		imageView.setImageBitmap(bitmap1);
 //		imageView.setImageResource(R.drawable.pencil);
 		return rowView;
 	}
+	
+	public void getImages() {
+		GetBitmapFromURL bitmapTask = new GetBitmapFromURL();
+		try {
+			bitmap1 = bitmapTask.execute("http://sokim209.appspot.com/images/flower2.jpg").get();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	
 	public class GetBitmapFromURL extends AsyncTask<String, Void, Bitmap> {
 
