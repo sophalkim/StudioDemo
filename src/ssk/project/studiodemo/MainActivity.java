@@ -57,7 +57,7 @@ public class MainActivity extends ActionBarActivity implements
 					RedditReaderFragment.newInstance("fitness")).commit();
 					break;
 		case 3: 	fragmentManager.beginTransaction().replace(R.id.container,
-					SoundFragment.newInstance()).commit();
+					SoundFragment.newInstance(this)).commit();
 					break;
 		case 4: 	fragmentManager.beginTransaction().replace(R.id.container,
 					TextFileReaderFragment.newInstance()).commit();

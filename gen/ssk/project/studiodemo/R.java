@@ -1245,7 +1245,8 @@ containing a value of this type.
         public static final int main=0x7f0d0001;
     }
     public static final class raw {
-        public static final int test=0x7f050000;
+        public static final int alabama=0x7f050000;
+        public static final int test=0x7f050001;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
