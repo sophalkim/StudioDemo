@@ -3,7 +3,7 @@
 
     <string name="app_name">StudioDemo</string>
     <string name="title_section1">Images</string>
-    <string name="title_section2">ListView</string>
+    <string name="title_section2">Web Images from my website</string>
     <string name="title_section3">Parse JSON Reddit Reader</string>
     <string name="title_section4">Play Sound</string>
     <string name="title_section5">Text File Reader</string>
