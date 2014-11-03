@@ -38,7 +38,12 @@ public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> {
 		if (position == 0) {
 			imageView.setImageBitmap(bitmap1);
 		} else {
-			imageView.setImageResource(R.drawable.pencil);
+			if (position == 1) {
+				imageView.setImageResource(R.drawable.jacket);
+			} else {
+				imageView.setImageResource(R.drawable.cat_food);
+			}
+			
 		}
 		return rowView;
 	}
