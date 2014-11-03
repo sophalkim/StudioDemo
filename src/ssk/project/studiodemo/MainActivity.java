@@ -1,6 +1,8 @@
 package ssk.project.studiodemo;
 
+import ssk.project.studiodemo.database.DataBaseActivity;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -65,6 +67,8 @@ public class MainActivity extends ActionBarActivity implements
 		case 5: 	fragmentManager.beginTransaction().replace(R.id.container,
 					ViewPagerFragment.newInstance()).commit();
 					break;
+		case 8:		Intent intent = new Intent(this, DataBaseActivity.class);
+					startActivity(intent);
 		default: 	fragmentManager
 					.beginTransaction()
 					.replace(R.id.container,
