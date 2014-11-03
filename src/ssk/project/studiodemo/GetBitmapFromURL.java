@@ -36,7 +36,7 @@ public class GetBitmapFromURL extends AsyncTask<String, Void, Bitmap> {
 	
 	@Override
 	protected void onPostExecute(Bitmap bitmap) {
-		listener.getImage(myBitmap);
+		listener.getImage(bitmap);
 	}
 	
 	public interface onTaskComplete {

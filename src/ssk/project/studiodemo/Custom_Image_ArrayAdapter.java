@@ -35,7 +35,8 @@ public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> implements G
 		GetBitmapFromURL getImages = new GetBitmapFromURL();
 		getImages.setOnTaskComplete(this);
 		getImages.execute("http://sokim209.appspot.com/images/flower2.jpg");
-		imageView.setImageBitmap(bitmap);
+//		imageView.setImageBitmap(bitmap);
+		imageView.setImageResource(R.drawable.pencil);
 		return rowView;
 	}
 	
