@@ -21,8 +21,6 @@ public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> {
 	private final Context mContext;
 	private final String[] values;
 	public static Bitmap bitmap1 = null;
-	public static Bitmap bitmap2 = null;
-	public static Bitmap bitmap3 = null;
 
 	public Custom_Image_ArrayAdapter(Context context, String[] values) {
 		super(context, R.layout.custom_row, values);
@@ -37,8 +35,11 @@ public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> {
 		TextView textView = (TextView) rowView.findViewById(R.id.label);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.image_view_1);
 		textView.setText(values[position]);
-		imageView.setImageBitmap(bitmap1);
-//		imageView.setImageResource(R.drawable.pencil);
+		if (position == 0) {
+			imageView.setImageBitmap(bitmap1);
+		} else {
+			imageView.setImageResource(R.drawable.pencil);
+		}
 		return rowView;
 	}
 	
