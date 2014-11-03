@@ -53,6 +53,9 @@ public class MainActivity extends ActionBarActivity implements
 		case 3: 	fragmentManager.beginTransaction().replace(R.id.container,
 					SoundFragment.newInstance()).commit();
 					break;
+		case 4: 	fragmentManager.beginTransaction().replace(R.id.container,
+					TextFileReaderFragment.newInstance()).commit();
+					break;			
 		default: 	fragmentManager
 					.beginTransaction()
 					.replace(R.id.container,

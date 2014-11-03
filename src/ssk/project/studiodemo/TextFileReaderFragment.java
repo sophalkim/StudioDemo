@@ -22,6 +22,9 @@ public class TextFileReaderFragment extends Fragment {
 	/**
 	 * Returns a new instance of this fragment for the given section number.
 	 */
+	
+	TextView tv;
+	
 	public static TextFileReaderFragment newInstance() {
 		TextFileReaderFragment fragment = new TextFileReaderFragment();
 		return fragment;
@@ -33,9 +36,9 @@ public class TextFileReaderFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.sound_layout, container,
+		View rootView = inflater.inflate(R.layout.text_file_reader_layout, container,
 				false);
-		final TextView tv = (TextView) rootView.findViewById(R.id.textFileReaderTextView);
+		tv = (TextView) rootView.findViewById(R.id.textFileReaderTextView);
 		tv.setText("A local text file is selected.");
 		Button button = (Button) rootView.findViewById(R.id.textFileReaderButton);
 		button.setOnClickListener(new View.OnClickListener() {

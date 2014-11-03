@@ -1,1 +1,1 @@
-this is the message in the test file.
+Congratulation, you were able to successfully opened a local file sitting within the raw directory of this app.
