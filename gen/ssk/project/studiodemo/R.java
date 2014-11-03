@@ -1086,9 +1086,12 @@ containing a value of this type.
         public static final int drawer_shadow=0x7f020057;
         public static final int flower1=0x7f020058;
         public static final int flower2=0x7f020059;
-        public static final int ic_drawer=0x7f02005a;
-        public static final int ic_launcher=0x7f02005b;
-        public static final int tiger=0x7f02005c;
+        public static final int hamburger=0x7f02005a;
+        public static final int home_button=0x7f02005b;
+        public static final int ic_drawer=0x7f02005c;
+        public static final int ic_launcher=0x7f02005d;
+        public static final int pencil=0x7f02005e;
+        public static final int tiger=0x7f02005f;
     }
     public static final class id {
         public static final int action_bar=0x7f06001c;
@@ -1099,13 +1102,14 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f060023;
         public static final int action_bar_title=0x7f060022;
         public static final int action_context_bar=0x7f06001d;
-        public static final int action_example=0x7f060046;
+        public static final int action_example=0x7f060047;
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060024;
-        public static final int action_settings=0x7f060045;
+        public static final int action_settings=0x7f060046;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
+        public static final int awesomepager=0x7f060045;
         public static final int beginning=0x7f060011;
         public static final int checkbox=0x7f06002d;
         public static final int collapseActionView=0x7f06000d;
@@ -1219,6 +1223,7 @@ containing a value of this type.
         public static final int sound_layout=0x7f03001b;
         public static final int support_simple_spinner_dropdown_item=0x7f03001c;
         public static final int text_file_reader_layout=0x7f03001d;
+        public static final int view_pager_layout=0x7f03001e;
     }
     public static final class menu {
         public static final int global=0x7f0d0000;

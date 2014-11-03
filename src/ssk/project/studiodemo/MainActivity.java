@@ -55,7 +55,10 @@ public class MainActivity extends ActionBarActivity implements
 					break;
 		case 4: 	fragmentManager.beginTransaction().replace(R.id.container,
 					TextFileReaderFragment.newInstance()).commit();
-					break;			
+					break;	
+		case 5: 	fragmentManager.beginTransaction().replace(R.id.container,
+					ViewPagerFragment.newInstance()).commit();
+					break;
 		default: 	fragmentManager
 					.beginTransaction()
 					.replace(R.id.container,
