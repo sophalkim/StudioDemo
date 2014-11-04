@@ -6,7 +6,6 @@ import ssk.project.studiodemo.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -76,10 +75,4 @@ public class DataBaseActivity extends Activity {
 	       } 
 
 	   } 
-	   public boolean onKeyDown(int keycode, KeyEvent event) {
-	      if (keycode == KeyEvent.KEYCODE_BACK) {
-	         moveTaskToBack(true);
-	      }
-	      return super.onKeyDown(keycode, event);
-	   }
 }
