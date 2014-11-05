@@ -2,6 +2,8 @@ package ssk.project.studiodemo.database2;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -57,5 +59,16 @@ public class DBHelper2 extends SQLiteOpenHelper {
 	    
 	    db.insert("contacts", null, contentValues);
 	    return true;
+	}
+	
+	/**
+	 * Takes id (primary key) and returns a cursor that is position before the first entry
+	 * @param id The primary key in the database
+	 * @return A cursor pointing to the information
+	 */
+	public Cursor getData(int id) {
+		SQLiteDatabase db = this.getReadableDatabase();
+		Cursor cursor = db.rawQuery("select * from contacts where id="+id+"", null);
+		return cursor;
 	}
 }
