@@ -1,5 +1,6 @@
 package ssk.project.studiodemo;
 
+import ssk.project.studiodemo.AnagramFragment.AnagramFragment;
 import ssk.project.studiodemo.database.DataBaseActivity;
 import ssk.project.studiodemo.loginFragment.LoginFragment;
 import android.app.Activity;
@@ -70,6 +71,9 @@ public class MainActivity extends ActionBarActivity implements
 					break;
 		case 6: 	fragmentManager.beginTransaction().replace(R.id.container,
 					LoginFragment.newInstance()).commit();
+					break;
+		case 7: 	fragmentManager.beginTransaction().replace(R.id.container,
+					AnagramFragment.newInstance()).commit();
 					break;
 		case 8:		Intent intent = new Intent(this, DataBaseActivity.class);
 					startActivity(intent);

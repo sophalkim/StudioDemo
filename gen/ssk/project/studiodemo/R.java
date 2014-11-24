@@ -1119,7 +1119,7 @@ containing a value of this type.
         public static final int awesomepager=0x7f06005e;
         public static final int beginning=0x7f060011;
         public static final int button1=0x7f060041;
-        public static final int buttonLogin=0x7f060054;
+        public static final int buttonLogin=0x7f060056;
         public static final int checkbox=0x7f06002d;
         public static final int collapseActionView=0x7f06000d;
         public static final int container=0x7f060049;
@@ -1131,27 +1131,27 @@ containing a value of this type.
         public static final int editTextCity=0x7f060042;
         public static final int editTextEmail=0x7f06003e;
         public static final int editTextName=0x7f06003d;
-        public static final int editTextPassword=0x7f060053;
+        public static final int editTextPassword=0x7f060055;
         public static final int editTextPhone=0x7f060045;
         public static final int editTextStreet=0x7f06003f;
-        public static final int editTextUserName=0x7f060052;
+        public static final int editTextUserName=0x7f060054;
         public static final int edit_query=0x7f060030;
         public static final int end=0x7f060013;
         public static final int expand_activities_button=0x7f060026;
         public static final int expanded_menu=0x7f06002c;
-        public static final int fragments_holder=0x7f060059;
+        public static final int fragments_holder=0x7f06005b;
         public static final int home=0x7f060014;
         public static final int homeAsUp=0x7f060005;
         public static final int icon=0x7f06002a;
         public static final int ifRoom=0x7f06000a;
         public static final int image=0x7f060027;
         public static final int imageView1=0x7f06004f;
-        public static final int image_view=0x7f060055;
+        public static final int image_view=0x7f060057;
         public static final int image_view_1=0x7f06004d;
         public static final int item1=0x7f060064;
         public static final int label=0x7f06004c;
-        public static final int linearLayout1=0x7f060050;
-        public static final int linearLayout2=0x7f060051;
+        public static final int linearLayout1=0x7f060052;
+        public static final int linearLayout2=0x7f060053;
         public static final int listMode=0x7f060001;
         public static final int listView1=0x7f06004b;
         public static final int list_item=0x7f060029;
@@ -1161,9 +1161,9 @@ containing a value of this type.
         public static final int never=0x7f060009;
         public static final int none=0x7f060010;
         public static final int normal=0x7f060000;
-        public static final int post_score=0x7f060057;
-        public static final int post_title=0x7f060056;
-        public static final int posts_list=0x7f060058;
+        public static final int post_score=0x7f060059;
+        public static final int post_title=0x7f060058;
+        public static final int posts_list=0x7f06005a;
         public static final int progress_circular=0x7f060018;
         public static final int progress_horizontal=0x7f060019;
         public static final int radio=0x7f06002f;
@@ -1183,13 +1183,13 @@ containing a value of this type.
         public static final int showCustom=0x7f060007;
         public static final int showHome=0x7f060004;
         public static final int showTitle=0x7f060006;
-        public static final int soundButton=0x7f06005b;
-        public static final int soundTextView=0x7f06005a;
+        public static final int soundButton=0x7f06005d;
+        public static final int soundTextView=0x7f06005c;
         public static final int split_action_bar=0x7f06001e;
         public static final int submit_area=0x7f060039;
         public static final int tabMode=0x7f060002;
-        public static final int textFileReaderButton=0x7f06005d;
-        public static final int textFileReaderTextView=0x7f06005c;
+        public static final int textFileReaderButton=0x7f060051;
+        public static final int textFileReaderTextView=0x7f060050;
         public static final int textView1=0x7f060040;
         public static final int textView2=0x7f060043;
         public static final int textView3=0x7f060047;
@@ -1257,15 +1257,16 @@ containing a value of this type.
         public static final int custom_row=0x7f03001b;
         public static final int fragment_main=0x7f03001c;
         public static final int fragment_navigation_drawer=0x7f03001d;
-        public static final int layout_fragment_login=0x7f03001e;
-        public static final int post_item=0x7f03001f;
-        public static final int posts=0x7f030020;
-        public static final int reddit_reader=0x7f030021;
-        public static final int sound_layout=0x7f030022;
-        public static final int support_simple_spinner_dropdown_item=0x7f030023;
-        public static final int text_file_reader_layout=0x7f030024;
-        public static final int view_pager_layout=0x7f030025;
-        public static final int web_images_layout=0x7f030026;
+        public static final int layout_anagram_fragment=0x7f03001e;
+        public static final int layout_fragment_login=0x7f03001f;
+        public static final int post_item=0x7f030020;
+        public static final int posts=0x7f030021;
+        public static final int reddit_reader=0x7f030022;
+        public static final int sound_layout=0x7f030023;
+        public static final int support_simple_spinner_dropdown_item=0x7f030024;
+        public static final int text_file_reader_layout=0x7f030025;
+        public static final int view_pager_layout=0x7f030026;
+        public static final int web_images_layout=0x7f030027;
     }
     public static final class menu {
         public static final int display_contact=0x7f0d0000;
@@ -1275,7 +1276,8 @@ containing a value of this type.
     }
     public static final class raw {
         public static final int alabama=0x7f050000;
-        public static final int test=0x7f050001;
+        public static final int anagramlist=0x7f050001;
+        public static final int test=0x7f050002;
     }
     public static final class string {
         public static final int Add_New=0x7f0b001f;
