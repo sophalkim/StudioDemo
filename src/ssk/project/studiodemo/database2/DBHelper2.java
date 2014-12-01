@@ -1,5 +1,7 @@
 package ssk.project.studiodemo.database2;
 
+import java.util.ArrayList;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -70,5 +72,40 @@ public class DBHelper2 extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor cursor = db.rawQuery("select * from contacts where id="+id+"", null);
 		return cursor;
+	}
+	
+	public int numberOfRows() {
+		SQLiteDatabase db = this.getReadableDatabase();
+		int numRows = (int) DatabaseUtils.queryNumEntries(db, CONTACTS_TABLE_NAME);
+		return numRows;
+	}
+	
+	public boolean updateContact(Integer id, String name, String phone, String email, String street, String place) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues contentValues = new ContentValues();
+		contentValues.put("name", name);
+		contentValues.put("phone", phone);
+		contentValues.put("email", email);
+		contentValues.put("street", street);
+		contentValues.put("place", place);
+		db.update("contacts", contentValues, "id = ? ", new String[] { Integer.toString(id) });
+		return true;
+	}
+	
+	public Integer deleteContact(Integer id) {
+		SQLiteDatabase db = getWritableDatabase();
+		return db.delete("contacts", "id = ? ", new String[] { Integer.toString(id) });
+	}
+	
+	public ArrayList getAllContacts() {
+		ArrayList array_list = new ArrayList();
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor res = db.rawQuery("select * from contacts", null);
+		res.moveToFirst();
+		while (res.isAfterLast() == false) {
+			array_list.add(res.getString(res.getColumnIndex(CONTACTS_COLUMN_NAME)));
+			res.moveToNext();
+		}
+		return array_list;
 	}
 }

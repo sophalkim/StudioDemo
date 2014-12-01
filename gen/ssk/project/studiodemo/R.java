@@ -1139,14 +1139,14 @@ containing a value of this type.
         public static final int end=0x7f060013;
         public static final int expand_activities_button=0x7f060026;
         public static final int expanded_menu=0x7f06002c;
-        public static final int fragments_holder=0x7f06005b;
+        public static final int fragments_holder=0x7f06005d;
         public static final int home=0x7f060014;
         public static final int homeAsUp=0x7f060005;
         public static final int icon=0x7f06002a;
         public static final int ifRoom=0x7f06000a;
         public static final int image=0x7f060027;
         public static final int imageView1=0x7f06004f;
-        public static final int image_view=0x7f060057;
+        public static final int image_view=0x7f060059;
         public static final int image_view_1=0x7f06004d;
         public static final int item1=0x7f060064;
         public static final int label=0x7f06004c;
@@ -1161,9 +1161,9 @@ containing a value of this type.
         public static final int never=0x7f060009;
         public static final int none=0x7f060010;
         public static final int normal=0x7f060000;
-        public static final int post_score=0x7f060059;
-        public static final int post_title=0x7f060058;
-        public static final int posts_list=0x7f06005a;
+        public static final int post_score=0x7f06005b;
+        public static final int post_title=0x7f06005a;
+        public static final int posts_list=0x7f06005c;
         public static final int progress_circular=0x7f060018;
         public static final int progress_horizontal=0x7f060019;
         public static final int radio=0x7f06002f;
@@ -1183,8 +1183,8 @@ containing a value of this type.
         public static final int showCustom=0x7f060007;
         public static final int showHome=0x7f060004;
         public static final int showTitle=0x7f060006;
-        public static final int soundButton=0x7f06005d;
-        public static final int soundTextView=0x7f06005c;
+        public static final int soundButton=0x7f060058;
+        public static final int soundTextView=0x7f060057;
         public static final int split_action_bar=0x7f06001e;
         public static final int submit_area=0x7f060039;
         public static final int tabMode=0x7f060002;
@@ -1259,10 +1259,10 @@ containing a value of this type.
         public static final int fragment_navigation_drawer=0x7f03001d;
         public static final int layout_anagram_fragment=0x7f03001e;
         public static final int layout_fragment_login=0x7f03001f;
-        public static final int post_item=0x7f030020;
-        public static final int posts=0x7f030021;
-        public static final int reddit_reader=0x7f030022;
-        public static final int sound_layout=0x7f030023;
+        public static final int layout_fragment_sound_player=0x7f030020;
+        public static final int post_item=0x7f030021;
+        public static final int posts=0x7f030022;
+        public static final int reddit_reader=0x7f030023;
         public static final int support_simple_spinner_dropdown_item=0x7f030024;
         public static final int text_file_reader_layout=0x7f030025;
         public static final int view_pager_layout=0x7f030026;
@@ -2733,7 +2733,7 @@ containing a value of this type.
          */
         public static final int[] MenuView = {
             0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e,
-            0x0101012f, 0x01010130, 0x01010131, 0x010103f8
+            0x0101012f, 0x01010130, 0x01010131, 0x010103ea
         };
         /**
           <p>

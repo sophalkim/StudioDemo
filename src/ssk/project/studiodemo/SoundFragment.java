@@ -32,7 +32,7 @@ public class SoundFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.sound_layout, container,
+		View rootView = inflater.inflate(R.layout.layout_fragment_sound_player, container,
 				false);
 		TextView tv = (TextView) rootView.findViewById(R.id.soundTextView);
 		tv.setText("Click the Button to play a sound");
