@@ -1,9 +1,14 @@
-package ssk.project.studiodemo;
+package ssk.project.studiodemo.fragmentTextFileReader;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
+import ssk.project.studiodemo.R;
+import ssk.project.studiodemo.R.id;
+import ssk.project.studiodemo.R.layout;
+import ssk.project.studiodemo.R.raw;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

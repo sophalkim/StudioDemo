@@ -1,10 +1,15 @@
-package ssk.project.studiodemo;
+package ssk.project.studiodemo.fragmentWebImages;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.ExecutionException;
+
+import ssk.project.studiodemo.R;
+import ssk.project.studiodemo.R.drawable;
+import ssk.project.studiodemo.R.id;
+import ssk.project.studiodemo.R.layout;
 
 import android.content.Context;
 import android.graphics.Bitmap;

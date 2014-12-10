@@ -2,7 +2,11 @@ package ssk.project.studiodemo;
 
 import ssk.project.studiodemo.AnagramFragment.AnagramFragment;
 import ssk.project.studiodemo.database.DataBaseActivity;
+import ssk.project.studiodemo.fragmentSoundPlayer.SoundFragment;
+import ssk.project.studiodemo.fragmentTextFileReader.TextFileReaderFragment;
+import ssk.project.studiodemo.fragmentWebImages.WebImagesFragment;
 import ssk.project.studiodemo.loginFragment.LoginFragment;
+import ssk.project.studiodemo.redditReaderFragment.RedditReaderFragment;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package ssk.project.studiodemo;
+package ssk.project.studiodemo.redditReaderFragment;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,5 +1,8 @@
-package ssk.project.studiodemo;
+package ssk.project.studiodemo.fragmentWebImages;
 
+import ssk.project.studiodemo.R;
+import ssk.project.studiodemo.R.id;
+import ssk.project.studiodemo.R.layout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;

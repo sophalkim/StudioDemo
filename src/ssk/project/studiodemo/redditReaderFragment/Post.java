@@ -1,4 +1,4 @@
-package ssk.project.studiodemo;
+package ssk.project.studiodemo.redditReaderFragment;
 
 
 public class Post {

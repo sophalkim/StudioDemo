@@ -1,4 +1,4 @@
-package ssk.project.studiodemo;
+package ssk.project.studiodemo.redditReaderFragment;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -6,6 +6,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import ssk.project.studiodemo.R;
+import ssk.project.studiodemo.R.id;
+import ssk.project.studiodemo.R.layout;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -19,16 +23,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
- 
-/**
- * While this looks like a lot of code, all this class
- * actually does is load the posts in to the listview.
- * 
- * @author Hathy 
- */
-public class PostsFragment extends Fragment{
-         
-    ListView postsList;
+
+public class RedditReaderFragment extends Fragment {
+	ListView postsList;
     ArrayAdapter<Post> adapter;
     Handler handler;
      
@@ -36,7 +33,7 @@ public class PostsFragment extends Fragment{
     List<Post> posts;
     PostsHolder postsHolder;
      
-    PostsFragment(){
+    RedditReaderFragment(){
         handler=new Handler();
         posts=new ArrayList<Post>();
     }    
@@ -163,5 +160,4 @@ public class PostsFragment extends Fragment{
             return null;
         }
     }
-         
 }

@@ -1,5 +1,6 @@
-package ssk.project.studiodemo;
+package ssk.project.studiodemo.fragmentSoundPlayer;
 
+import ssk.project.studiodemo.R;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.SoundPool;
