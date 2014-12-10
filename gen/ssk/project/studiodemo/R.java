@@ -1145,15 +1145,15 @@ containing a value of this type.
         public static final int icon=0x7f06002a;
         public static final int ifRoom=0x7f06000a;
         public static final int image=0x7f060027;
-        public static final int imageView1=0x7f06004f;
+        public static final int imageView1=0x7f06004e;
         public static final int image_view=0x7f060059;
-        public static final int image_view_1=0x7f06004d;
+        public static final int image_view_1=0x7f06004c;
         public static final int item1=0x7f060064;
-        public static final int label=0x7f06004c;
+        public static final int label=0x7f06004b;
         public static final int linearLayout1=0x7f060052;
         public static final int linearLayout2=0x7f060053;
         public static final int listMode=0x7f060001;
-        public static final int listView1=0x7f06004b;
+        public static final int listView1=0x7f060051;
         public static final int list_item=0x7f060029;
         public static final int list_view_1=0x7f06005f;
         public static final int middle=0x7f060012;
@@ -1178,7 +1178,7 @@ containing a value of this type.
         public static final int search_plate=0x7f060036;
         public static final int search_src_text=0x7f060037;
         public static final int search_voice_btn=0x7f06003b;
-        public static final int section_label=0x7f06004e;
+        public static final int section_label=0x7f06004d;
         public static final int shortcut=0x7f06002e;
         public static final int showCustom=0x7f060007;
         public static final int showHome=0x7f060004;
@@ -1188,8 +1188,8 @@ containing a value of this type.
         public static final int split_action_bar=0x7f06001e;
         public static final int submit_area=0x7f060039;
         public static final int tabMode=0x7f060002;
-        public static final int textFileReaderButton=0x7f060051;
-        public static final int textFileReaderTextView=0x7f060050;
+        public static final int textFileReaderButton=0x7f060050;
+        public static final int textFileReaderTextView=0x7f06004f;
         public static final int textView1=0x7f060040;
         public static final int textView2=0x7f060043;
         public static final int textView3=0x7f060047;
@@ -1253,11 +1253,11 @@ containing a value of this type.
         public static final int abc_simple_decor=0x7f030017;
         public static final int activity_display_contact=0x7f030018;
         public static final int activity_main=0x7f030019;
-        public static final int activity_main2=0x7f03001a;
-        public static final int custom_row=0x7f03001b;
-        public static final int fragment_main=0x7f03001c;
-        public static final int fragment_navigation_drawer=0x7f03001d;
-        public static final int layout_anagram_fragment=0x7f03001e;
+        public static final int custom_row=0x7f03001a;
+        public static final int fragment_main=0x7f03001b;
+        public static final int fragment_navigation_drawer=0x7f03001c;
+        public static final int layout_anagram_fragment=0x7f03001d;
+        public static final int layout_contacts=0x7f03001e;
         public static final int layout_fragment_login=0x7f03001f;
         public static final int layout_fragment_sound_player=0x7f030020;
         public static final int post_item=0x7f030021;
@@ -1272,7 +1272,7 @@ containing a value of this type.
         public static final int display_contact=0x7f0d0000;
         public static final int global=0x7f0d0001;
         public static final int main=0x7f0d0002;
-        public static final int mainmenu=0x7f0d0003;
+        public static final int menu_listview_all_contacts=0x7f0d0003;
     }
     public static final class raw {
         public static final int alabama=0x7f050000;

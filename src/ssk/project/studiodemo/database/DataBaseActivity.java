@@ -23,7 +23,7 @@ public class DataBaseActivity extends Activity {
 	   @Override
 	   protected void onCreate(Bundle savedInstanceState) {
 	      super.onCreate(savedInstanceState);
-	      setContentView(R.layout.activity_main2);
+	      setContentView(R.layout.layout_contacts);
 
 	      mydb = new DBHelper(this);
 	      ArrayList array_list = mydb.getAllCotacts();
@@ -53,7 +53,7 @@ public class DataBaseActivity extends Activity {
 	   @Override
 	   public boolean onCreateOptionsMenu(Menu menu) {
 	      // Inflate the menu; this adds items to the action bar if it is present.
-	      getMenuInflater().inflate(R.menu.mainmenu, menu);
+	      getMenuInflater().inflate(R.menu.menu_listview_all_contacts, menu);
 	      return true;
 	      }
 	   @Override 

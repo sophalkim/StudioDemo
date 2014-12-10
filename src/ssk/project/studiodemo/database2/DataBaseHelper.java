@@ -9,7 +9,7 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DBHelper2 extends SQLiteOpenHelper {
+public class DataBaseHelper extends SQLiteOpenHelper {
 
 	public static final String DATABASE_NAME = "MyDBName.db";
 	public static final String CONTACTS_TABLE_NAME = "contacts";
@@ -20,7 +20,7 @@ public class DBHelper2 extends SQLiteOpenHelper {
     public static final String CONTACTS_COLUMN_CITY = "place";
     public static final String CONTACTS_COLUMN_PHONE = "phone";
 	
-	public DBHelper2(Context context) {
+	public DataBaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, 1);
 	}
 
@@ -97,8 +97,8 @@ public class DBHelper2 extends SQLiteOpenHelper {
 		return db.delete("contacts", "id = ? ", new String[] { Integer.toString(id) });
 	}
 	
-	public ArrayList getAllContacts() {
-		ArrayList array_list = new ArrayList();
+	public ArrayList<String> getAllContacts() {
+		ArrayList<String> array_list = new ArrayList<String>();
 		SQLiteDatabase db = getReadableDatabase();
 		Cursor res = db.rawQuery("select * from contacts", null);
 		res.moveToFirst();
