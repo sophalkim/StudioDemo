@@ -4,6 +4,7 @@ import ssk.project.studiodemo.R;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -12,25 +13,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-public class ViewPagerFragment2 extends Fragment {
+public class FragmentViewPager extends Fragment {
 	
 	ViewPager viewPager;
 	private static int NUMBER_OF_VIEWS = 3;
 	private CustomPagerAdapter adapter;
 	
-	public static ViewPagerFragment2 newInstance() {
-		ViewPagerFragment2 fragment = new ViewPagerFragment2();
+	public static FragmentViewPager newInstance() {
+		FragmentViewPager fragment = new FragmentViewPager();
 		return fragment;
 	}
 	
-	public ViewPagerFragment2() {}
+	public FragmentViewPager() {}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.view_pager_layout, container, false);
-		adapter = new CustomPagerAdapter(getActivity());
-		viewPager = (ViewPager) rootView.findViewById(R.id.awesomepager);
+		adapter = new CustomPagerAdapter(this.getActivity());
+		viewPager = (ViewPager) rootView.findViewById(R.id.viewPager);
 		viewPager.setAdapter(adapter);
 		return rootView;
 	}
@@ -53,6 +54,7 @@ public class ViewPagerFragment2 extends Fragment {
 		public Object instantiateItem(ViewGroup collection, int position) {
 			ImageView imageView = new ImageView(context);
 			imageView.setImageResource(images[position]);
+			collection.addView(imageView, 0);
 			return imageView;
 		}
 		
@@ -70,6 +72,20 @@ public class ViewPagerFragment2 extends Fragment {
 		public boolean isViewFromObject(View view, Object object) {
 			return view == object;
 		}
+		
+		@Override
+		public void finishUpdate(ViewGroup container) {}
+		
+		@Override
+		public void restoreState(Parcelable parcelable, ClassLoader classLoader) {}
+		
+		@Override
+		public Parcelable saveState() {
+			return null;
+		}
+		
+		@Override
+		public void startUpdate(ViewGroup container) {}
 	}
 	
 }

@@ -7,6 +7,7 @@ import ssk.project.studiodemo.fragmentTextFileReader.TextFileReaderFragment;
 import ssk.project.studiodemo.fragmentWebImages.WebImagesFragment;
 import ssk.project.studiodemo.loginFragment.LoginFragment;
 import ssk.project.studiodemo.redditReaderFragment.RedditReaderFragment;
+import ssk.project.studiodemo.viewPagerFragment.FragmentViewPager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -71,7 +72,7 @@ public class MainActivity extends ActionBarActivity implements
 					TextFileReaderFragment.newInstance()).commit();
 					break;	
 		case 5: 	fragmentManager.beginTransaction().replace(R.id.container,
-					ViewPagerFragment.newInstance()).commit();
+					FragmentViewPager.newInstance()).commit();
 					break;
 		case 6: 	fragmentManager.beginTransaction().replace(R.id.container,
 					LoginFragment.newInstance()).commit();

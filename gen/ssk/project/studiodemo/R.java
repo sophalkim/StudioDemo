@@ -1116,7 +1116,6 @@ containing a value of this type.
         public static final int action_settings=0x7f060062;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
-        public static final int awesomepager=0x7f06005e;
         public static final int beginning=0x7f060011;
         public static final int button1=0x7f060041;
         public static final int buttonLogin=0x7f060056;
@@ -1199,6 +1198,7 @@ containing a value of this type.
         public static final int top_action_bar=0x7f060020;
         public static final int up=0x7f060021;
         public static final int useLogo=0x7f060003;
+        public static final int viewPager=0x7f06005e;
         public static final int withText=0x7f06000c;
     }
     public static final class integer {
