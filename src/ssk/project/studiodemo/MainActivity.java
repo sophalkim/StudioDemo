@@ -2,6 +2,7 @@ package ssk.project.studiodemo;
 
 import ssk.project.studiodemo.AnagramFragment.AnagramFragment;
 import ssk.project.studiodemo.database.DataBaseActivity;
+import ssk.project.studiodemo.database2.DataBaseActivity2;
 import ssk.project.studiodemo.fragmentSoundPlayer.SoundFragment;
 import ssk.project.studiodemo.fragmentTextFileReader.TextFileReaderFragment;
 import ssk.project.studiodemo.fragmentWebImages.WebImagesFragment;
@@ -80,8 +81,9 @@ public class MainActivity extends ActionBarActivity implements
 		case 7: 	fragmentManager.beginTransaction().replace(R.id.container,
 					AnagramFragment.newInstance()).commit();
 					break;
-		case 8:		Intent intent = new Intent(this, DataBaseActivity.class);
-					startActivity(intent);
+		case 8:		fragmentManager.beginTransaction().replace(R.id.container,
+					DataBaseActivity2.newInstance(this)).commit();
+					break;
 		default: 	fragmentManager
 					.beginTransaction()
 					.replace(R.id.container,

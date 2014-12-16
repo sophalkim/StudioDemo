@@ -23,7 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".database.DataBaseActivity"></activity>
         <activity android:name=".database.DisplayContact"></activity>
     </application>
 
