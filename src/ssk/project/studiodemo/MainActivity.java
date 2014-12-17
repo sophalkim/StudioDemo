@@ -1,8 +1,7 @@
 package ssk.project.studiodemo;
 
 import ssk.project.studiodemo.AnagramFragment.AnagramFragment;
-import ssk.project.studiodemo.database.DataBaseActivity;
-import ssk.project.studiodemo.database2.DataBaseActivity2;
+import ssk.project.studiodemo.fragmentLoaderListView.FragmentLoaderListView;
 import ssk.project.studiodemo.fragmentSoundPlayer.SoundFragment;
 import ssk.project.studiodemo.fragmentTextFileReader.TextFileReaderFragment;
 import ssk.project.studiodemo.fragmentWebImages.WebImagesFragment;
@@ -10,7 +9,6 @@ import ssk.project.studiodemo.loginFragment.LoginFragment;
 import ssk.project.studiodemo.redditReaderFragment.RedditReaderFragment;
 import ssk.project.studiodemo.viewPagerFragment.FragmentViewPager;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -82,7 +80,7 @@ public class MainActivity extends ActionBarActivity implements
 					AnagramFragment.newInstance()).commit();
 					break;
 		case 8:		fragmentManager.beginTransaction().replace(R.id.container,
-					DataBaseActivity2.newInstance(this)).commit();
+					FragmentLoaderListView.newInstance()).commit();
 					break;
 		default: 	fragmentManager
 					.beginTransaction()
