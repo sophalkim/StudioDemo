@@ -1,6 +1,7 @@
 package ssk.project.studiodemo;
 
 import ssk.project.studiodemo.AnagramFragment.AnagramFragment;
+import ssk.project.studiodemo.database2.DataBaseActivity2;
 import ssk.project.studiodemo.fragmentLoaderListView.FragmentLoaderListView;
 import ssk.project.studiodemo.fragmentSoundPlayer.SoundFragment;
 import ssk.project.studiodemo.fragmentTextFileReader.TextFileReaderFragment;
@@ -81,6 +82,9 @@ public class MainActivity extends ActionBarActivity implements
 					break;
 		case 8:		fragmentManager.beginTransaction().replace(R.id.container,
 					FragmentLoaderListView.newInstance()).commit();
+					break;
+		case 9:		fragmentManager.beginTransaction().replace(R.id.container,
+					DataBaseActivity2.newInstance(this)).commit();
 					break;
 		default: 	fragmentManager
 					.beginTransaction()

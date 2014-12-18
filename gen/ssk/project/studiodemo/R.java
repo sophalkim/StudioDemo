@@ -1280,7 +1280,7 @@ containing a value of this type.
         public static final int test=0x7f050002;
     }
     public static final class string {
-        public static final int Add_New=0x7f0b001f;
+        public static final int Add_New=0x7f0b0020;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
         public static final int abc_action_bar_home_description=0x7f0b0001;
@@ -1321,30 +1321,31 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0b000b;
-        public static final int action_example=0x7f0b0019;
-        public static final int action_settings=0x7f0b001a;
+        public static final int action_example=0x7f0b001a;
+        public static final int action_settings=0x7f0b001b;
         public static final int app_name=0x7f0b000d;
-        public static final int country=0x7f0b0027;
-        public static final int delete=0x7f0b0021;
-        public static final int deleteContact=0x7f0b0029;
-        public static final int edit=0x7f0b0020;
-        public static final int email=0x7f0b0025;
-        public static final int extract_file=0x7f0b001d;
-        public static final int hello_world=0x7f0b001e;
-        public static final int image=0x7f0b001b;
-        public static final int login=0x7f0b002f;
-        public static final int login_title=0x7f0b002c;
-        public static final int name=0x7f0b0023;
-        public static final int navigation_drawer_close=0x7f0b0018;
-        public static final int navigation_drawer_open=0x7f0b0017;
-        public static final int no=0x7f0b002b;
-        public static final int password=0x7f0b002e;
-        public static final int phone=0x7f0b0024;
-        public static final int play_sound=0x7f0b001c;
-        public static final int save=0x7f0b0028;
-        public static final int street=0x7f0b0026;
-        public static final int title_activity_display_contact=0x7f0b0022;
+        public static final int country=0x7f0b0028;
+        public static final int delete=0x7f0b0022;
+        public static final int deleteContact=0x7f0b002a;
+        public static final int edit=0x7f0b0021;
+        public static final int email=0x7f0b0026;
+        public static final int extract_file=0x7f0b001e;
+        public static final int hello_world=0x7f0b001f;
+        public static final int image=0x7f0b001c;
+        public static final int login=0x7f0b0030;
+        public static final int login_title=0x7f0b002d;
+        public static final int name=0x7f0b0024;
+        public static final int navigation_drawer_close=0x7f0b0019;
+        public static final int navigation_drawer_open=0x7f0b0018;
+        public static final int no=0x7f0b002c;
+        public static final int password=0x7f0b002f;
+        public static final int phone=0x7f0b0025;
+        public static final int play_sound=0x7f0b001d;
+        public static final int save=0x7f0b0029;
+        public static final int street=0x7f0b0027;
+        public static final int title_activity_display_contact=0x7f0b0023;
         public static final int title_section1=0x7f0b000e;
+        public static final int title_section10=0x7f0b0017;
         public static final int title_section2=0x7f0b000f;
         public static final int title_section3=0x7f0b0010;
         public static final int title_section4=0x7f0b0011;
@@ -1353,8 +1354,8 @@ containing a value of this type.
         public static final int title_section7=0x7f0b0014;
         public static final int title_section8=0x7f0b0015;
         public static final int title_section9=0x7f0b0016;
-        public static final int user_name=0x7f0b002d;
-        public static final int yes=0x7f0b002a;
+        public static final int user_name=0x7f0b002e;
+        public static final int yes=0x7f0b002b;
     }
     public static final class style {
         /** 
