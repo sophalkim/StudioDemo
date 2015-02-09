@@ -6,6 +6,7 @@ import ssk.project.studiodemo.fragmentLoaderListView.FragmentLoaderListView;
 import ssk.project.studiodemo.fragmentSoundPlayer.SoundFragment;
 import ssk.project.studiodemo.fragmentTextFileReader.TextFileReaderFragment;
 import ssk.project.studiodemo.fragmentWebImages.WebImagesFragment;
+import ssk.project.studiodemo.gridview.GridViewFragment;
 import ssk.project.studiodemo.loginFragment.LoginFragment;
 import ssk.project.studiodemo.redditReaderFragment.RedditReaderFragment;
 import ssk.project.studiodemo.viewPagerFragment.FragmentViewPager;
@@ -85,6 +86,9 @@ public class MainActivity extends ActionBarActivity implements
 					break;
 		case 9:		fragmentManager.beginTransaction().replace(R.id.container,
 					DataBaseActivity2.newInstance(this)).commit();
+					break;
+		case 10:	fragmentManager.beginTransaction().replace(R.id.container,
+					GridViewFragment.newInstance()).commit();
 					break;
 		default: 	fragmentManager
 					.beginTransaction()
