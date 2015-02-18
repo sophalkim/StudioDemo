@@ -1,6 +1,7 @@
-package ssk.project.studiodemo.fragmentWebImages;
+package ssk.project.studiodemo.ViewPagerListView;
 
 import ssk.project.studiodemo.R;
+import ssk.project.studiodemo.fragmentWebImages.Custom_Image_ArrayAdapter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -30,7 +31,7 @@ public class WebImagesFragment extends Fragment {
         	x[i] = "" + i;
         }
         ListView lv = (ListView) v.findViewById(R.id.list_view_1);
-        New_Custom_Image_ArrayAdapter adapter = new New_Custom_Image_ArrayAdapter(getActivity(), x);
+        Custom_Image_ArrayAdapter adapter = new Custom_Image_ArrayAdapter(getActivity(), x);
         lv.setAdapter(adapter);
         return v;
     }
