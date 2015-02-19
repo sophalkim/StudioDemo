@@ -3,7 +3,6 @@ package ssk.project.studiodemo.gridview;
 import ssk.project.studiodemo.R;
 import android.content.Context;
 import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;

@@ -29,7 +29,7 @@ public class DataBaseActivity extends Activity {
 		db = new DBHelper(this);
 		ArrayList<String> contactsList = db.getAllContacts();
 		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, contactsList);
-		lv = (ListView) findViewById(R.id.list_view_1);
+		lv = (ListView) findViewById(R.id.listview1);
 		lv.setAdapter(arrayAdapter);
 		lv.setOnItemClickListener(new OnItemClickListener() {
 

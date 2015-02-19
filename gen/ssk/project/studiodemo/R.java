@@ -1099,8 +1099,8 @@ containing a value of this type.
         public static final int tiger=0x7f020064;
     }
     public static final class id {
-        public static final int Delete_Contact=0x7f060062;
-        public static final int Edit_Contact=0x7f060061;
+        public static final int Delete_Contact=0x7f060063;
+        public static final int Edit_Contact=0x7f060062;
         public static final int action_bar=0x7f06001c;
         public static final int action_bar_activity_content=0x7f060015;
         public static final int action_bar_container=0x7f06001b;
@@ -1109,11 +1109,11 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f060023;
         public static final int action_bar_title=0x7f060022;
         public static final int action_context_bar=0x7f06001d;
-        public static final int action_example=0x7f060064;
+        public static final int action_example=0x7f060065;
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060024;
-        public static final int action_settings=0x7f060063;
+        public static final int action_settings=0x7f060064;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
         public static final int beginning=0x7f060011;
@@ -1148,14 +1148,14 @@ containing a value of this type.
         public static final int imageView1=0x7f06004e;
         public static final int image_view=0x7f06005a;
         public static final int image_view_1=0x7f06004c;
-        public static final int item1=0x7f060065;
+        public static final int item1=0x7f060066;
         public static final int label=0x7f06004b;
         public static final int linearLayout1=0x7f060053;
         public static final int linearLayout2=0x7f060054;
         public static final int listMode=0x7f060001;
         public static final int listView1=0x7f060052;
         public static final int list_item=0x7f060029;
-        public static final int list_view_1=0x7f060060;
+        public static final int listview1=0x7f060060;
         public static final int middle=0x7f060012;
         public static final int navigation_drawer=0x7f06004a;
         public static final int never=0x7f060009;
@@ -1187,6 +1187,7 @@ containing a value of this type.
         public static final int soundTextView=0x7f060058;
         public static final int split_action_bar=0x7f06001e;
         public static final int submit_area=0x7f060039;
+        public static final int swipe_container=0x7f06005f;
         public static final int tabMode=0x7f060002;
         public static final int textFileReaderButton=0x7f060051;
         public static final int textFileReaderTextView=0x7f060050;
@@ -1199,7 +1200,7 @@ containing a value of this type.
         public static final int top_action_bar=0x7f060020;
         public static final int up=0x7f060021;
         public static final int useLogo=0x7f060003;
-        public static final int viewPager=0x7f06005f;
+        public static final int viewPager=0x7f060061;
         public static final int withText=0x7f06000c;
     }
     public static final class integer {
@@ -1266,9 +1267,9 @@ containing a value of this type.
         public static final int posts=0x7f030023;
         public static final int reddit_reader=0x7f030024;
         public static final int support_simple_spinner_dropdown_item=0x7f030025;
-        public static final int text_file_reader_layout=0x7f030026;
-        public static final int view_pager_layout=0x7f030027;
-        public static final int web_images_layout=0x7f030028;
+        public static final int swipe_refresh_layout=0x7f030026;
+        public static final int text_file_reader_layout=0x7f030027;
+        public static final int view_pager_layout=0x7f030028;
     }
     public static final class menu {
         public static final int display_contact=0x7f0d0000;

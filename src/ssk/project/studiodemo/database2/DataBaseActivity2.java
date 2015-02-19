@@ -43,7 +43,7 @@ public class DataBaseActivity2 extends Fragment {
 			Bundle savedInstanceState) {
 		rootView = inflater.inflate(R.layout.layout_contacts, container,
 				false);
-		lv = (ListView) rootView.findViewById(R.id.list_view_1);
+		lv = (ListView) rootView.findViewById(R.id.listview1);
 		Log.i("Database", "ListView initialized");
 		lv.setAdapter(arrayAdapter);
 		lv.setOnItemClickListener(new OnItemClickListener() {

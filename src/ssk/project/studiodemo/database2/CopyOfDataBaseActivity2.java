@@ -56,7 +56,7 @@ public class CopyOfDataBaseActivity2 extends Activity {
 	 * Setup the ListView for this activity.
 	 */
 	public void setListView() {
-		lv = (ListView) findViewById(R.id.list_view_1);
+		lv = (ListView) findViewById(R.id.listview1);
 		lv.setAdapter(arrayAdapter);
 		lv.setOnItemClickListener(new OnItemClickListener() {
 

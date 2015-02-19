@@ -2,16 +2,24 @@ package ssk.project.studiodemo.fragmentWebImages;
 
 import ssk.project.studiodemo.R;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
-public class WebImagesFragment extends Fragment {
+public class WebImagesFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
      
-    WebImagesFragment(){
-    }    
+	SwipeRefreshLayout swipeLayout;
+	ListView listView;
+	ArrayAdapter<String> adapter;
+	TextView textView;
+	ImageView imageView;  
      
     public static WebImagesFragment newInstance(){
         WebImagesFragment instance = new WebImagesFragment();        
@@ -19,20 +27,39 @@ public class WebImagesFragment extends Fragment {
     }
      
     @Override
-    public View onCreateView(LayoutInflater inflater,
-                             ViewGroup container,
-                             Bundle savedInstanceState) {
-        View v=inflater.inflate(R.layout.web_images_layout
-                                , container
-                                , false);
-        String[] x = new String[3];
-        for (int i=0; i<x.length; i++) {
-        	x[i] = "" + i;
-        }
-        ListView lv = (ListView) v.findViewById(R.id.list_view_1);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.swipe_refresh_layout, container, false);
+        setSwipeLayout(rootView);
+        String[] x = {"cool", "awesome", "amazing"};
+        listView = (ListView) rootView.findViewById(R.id.listview1);
         New_Custom_Image_ArrayAdapter adapter = new New_Custom_Image_ArrayAdapter(getActivity(), x);
-        lv.setAdapter(adapter);
-        return v;
+        listView.setAdapter(adapter);
+        return rootView;
     }
+    
+    public void setSwipeLayout(View rootView) {
+    	swipeLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_container);
+		swipeLayout.setOnRefreshListener(this);
+		swipeLayout.setColorSchemeResources(android.R.color.holo_blue_bright, 
+	            android.R.color.holo_green_light, 
+	            android.R.color.holo_orange_light, 
+	            android.R.color.holo_red_light);
+		textView = new TextView(getActivity());
+		imageView = new ImageView(getActivity());
+    }
+    
+    @Override
+	public void onRefresh() {
+		textView.setText("It's refreshing");
+		listView.addFooterView(textView);
+		new Handler().postDelayed(new Runnable() {
+	        @Override public void run() {
+	        	textView.setText("Done refreshing");
+	            swipeLayout.setRefreshing(false);
+	            imageView.setImageResource(R.drawable.ic_launcher);
+	            listView.addHeaderView(imageView);
+	        }
+	    }, 3000);
+	}
   
 }
