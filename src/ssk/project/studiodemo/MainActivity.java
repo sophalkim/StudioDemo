@@ -64,7 +64,7 @@ public class MainActivity extends ActionBarActivity implements
 					WebImagesFragment.newInstance()).commit();
 					break;
 		case 2: 	fragmentManager.beginTransaction().replace(R.id.container,
-					RedditReaderFragment.newInstance("fitness")).commit();
+					RedditReaderFragment.newInstance("askreddit")).commit();
 					break;
 		case 3: 	fragmentManager.beginTransaction().replace(R.id.container,
 					SoundFragment.newInstance(this)).commit();
