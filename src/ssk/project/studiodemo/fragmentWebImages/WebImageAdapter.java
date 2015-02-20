@@ -7,10 +7,6 @@ import java.net.URL;
 import java.util.concurrent.ExecutionException;
 
 import ssk.project.studiodemo.R;
-import ssk.project.studiodemo.R.drawable;
-import ssk.project.studiodemo.R.id;
-import ssk.project.studiodemo.R.layout;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -22,12 +18,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> {
+public class WebImageAdapter extends ArrayAdapter<String> {
 	private final Context mContext;
 	private final String[] values;
 	public static Bitmap bitmap1 = null;
+	private ViewHolder viewHolder;
 
-	public Custom_Image_ArrayAdapter(Context context, String[] values) {
+	public WebImageAdapter(Context context, String[] values) {
 		super(context, R.layout.custom_row, values);
 		mContext = context;
 		this.values = values;
@@ -36,21 +33,28 @@ public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> {
 
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View rowView = inflater.inflate(R.layout.custom_row, parent, false);
-		TextView textView = (TextView) rowView.findViewById(R.id.label);
-		ImageView imageView = (ImageView) rowView.findViewById(R.id.image_view_1);
-		textView.setText(values[position]);
+		if (convertView == null) {
+			convertView = inflater.inflate(R.layout.custom_row, parent, false);
+			viewHolder = new ViewHolder();
+			viewHolder.textView = (TextView) convertView.findViewById(R.id.label);
+			viewHolder.imageView = (ImageView) convertView.findViewById(R.id.image_view_1);
+			convertView.setTag(viewHolder);
+		} else {
+			viewHolder = (ViewHolder) convertView.getTag();
+		}
+//	    View rowView = inflater.inflate(R.layout.custom_row, parent, false);
+		viewHolder.textView.setText(values[position]);
 		if (position == 0) {
-			imageView.setImageBitmap(bitmap1);
+			viewHolder.imageView.setImageBitmap(bitmap1);
 		} else {
 			if (position == 1) {
-				imageView.setImageResource(R.drawable.jacket);
+				viewHolder.imageView.setImageResource(R.drawable.jacket);
 			} else {
-				imageView.setImageResource(R.drawable.cat_food);
+				viewHolder.imageView.setImageResource(R.drawable.cat_food);
 			}
 			
 		}
-		return rowView;
+		return convertView;
 	}
 	
 	public void getImages() {
@@ -85,6 +89,11 @@ public class Custom_Image_ArrayAdapter extends ArrayAdapter<String> {
 	        }
 		}	
 		
+	}
+	
+	static class ViewHolder {
+		TextView textView;
+		ImageView imageView;
 	}
 
 }

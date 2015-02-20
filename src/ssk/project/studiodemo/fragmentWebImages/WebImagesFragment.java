@@ -8,7 +8,6 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -17,9 +16,9 @@ public class WebImagesFragment extends Fragment implements SwipeRefreshLayout.On
      
 	SwipeRefreshLayout swipeLayout;
 	ListView listView;
-	ArrayAdapter<String> adapter;
+	WebImageAdapter adapter;
 	TextView textView;
-	ImageView imageView;  
+	ImageView imageView; 
      
     public static WebImagesFragment newInstance(){
         WebImagesFragment instance = new WebImagesFragment();        
@@ -32,7 +31,7 @@ public class WebImagesFragment extends Fragment implements SwipeRefreshLayout.On
         setSwipeLayout(rootView);
         String[] x = {"cool", "awesome", "amazing"};
         listView = (ListView) rootView.findViewById(R.id.listview1);
-        New_Custom_Image_ArrayAdapter adapter = new New_Custom_Image_ArrayAdapter(getActivity(), x);
+        adapter = new WebImageAdapter(getActivity(), x);
         listView.setAdapter(adapter);
         return rootView;
     }
@@ -58,6 +57,7 @@ public class WebImagesFragment extends Fragment implements SwipeRefreshLayout.On
 	            swipeLayout.setRefreshing(false);
 	            imageView.setImageResource(R.drawable.ic_launcher);
 	            listView.addHeaderView(imageView);
+	            adapter.notifyDataSetChanged();
 	        }
 	    }, 3000);
 	}
