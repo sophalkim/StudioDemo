@@ -8,14 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ssk.project.studiodemo.R;
-import ssk.project.studiodemo.R.id;
-import ssk.project.studiodemo.R.layout;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,8 +22,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class RedditReaderFragment extends Fragment {
-	ListView postsList;
+public class RedditReaderFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+	SwipeRefreshLayout swipeLayout;
+	ListView listView;
     ArrayAdapter<Post> adapter;
     Handler handler;
      
@@ -39,7 +38,7 @@ public class RedditReaderFragment extends Fragment {
     }    
      
     public static Fragment newInstance(String subreddit){
-        PostsFragment pf=new PostsFragment();
+        RedditReaderFragment pf=new RedditReaderFragment();
         pf.subreddit=subreddit;
         pf.postsHolder=new PostsHolder(pf.subreddit);        
         return pf;
@@ -49,11 +48,19 @@ public class RedditReaderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
-        View v=inflater.inflate(R.layout.posts
-                                , container
-                                , false);
-        postsList=(ListView)v.findViewById(R.id.posts_list);
-        return v;
+        View rootView = inflater.inflate(R.layout.swipe_refresh_layout, container, false);
+        setSwipeLayout(rootView);
+        listView = (ListView) rootView.findViewById(R.id.listview1);
+        return rootView;
+    }
+    
+    public void setSwipeLayout(View rootView) {
+    	swipeLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipe_container);
+		swipeLayout.setOnRefreshListener(this);
+		swipeLayout.setColorSchemeResources(android.R.color.holo_blue_bright, 
+	            android.R.color.holo_green_light, 
+	            android.R.color.holo_orange_light, 
+	            android.R.color.holo_red_light);
     }
      
     @Override
@@ -67,6 +74,8 @@ public class RedditReaderFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         initialize();
     }
+    
+    
      
     private void initialize(){
         // This should run only once for the fragment as the
@@ -118,7 +127,7 @@ public class RedditReaderFragment extends Fragment {
                 if(convertView==null){
                     convertView=getActivity()
                                 .getLayoutInflater()
-                                .inflate(R.layout.post_item, null);
+                                .inflate(R.layout.post_item, parent, false);
                 }
  
                 TextView postTitle;
@@ -143,7 +152,7 @@ public class RedditReaderFragment extends Fragment {
                 return convertView;
             }
         };
-        postsList.setAdapter(adapter);
+        listView.setAdapter(adapter);
     }
     
     public static Bitmap getBitmapFromURL(String src) {
@@ -160,4 +169,14 @@ public class RedditReaderFragment extends Fragment {
             return null;
         }
     }
+
+    @Override
+	public void onRefresh() {
+		new Handler().postDelayed(new Runnable() {
+	        @Override public void run() {
+	            swipeLayout.setRefreshing(false);
+	            adapter.notifyDataSetChanged();
+	        }
+	    }, 3000);
+	}
 }
