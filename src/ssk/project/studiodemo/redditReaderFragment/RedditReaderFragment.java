@@ -33,7 +33,6 @@ public class RedditReaderFragment extends Fragment implements SwipeRefreshLayout
     int currentScrollState = 0;
     boolean isLoading = false;
     
-
     public static Fragment newInstance(String subreddit){
         RedditReaderFragment pf=new RedditReaderFragment();
         posts=new ArrayList<Post>();
@@ -44,9 +43,7 @@ public class RedditReaderFragment extends Fragment implements SwipeRefreshLayout
     }
      
     @Override
-    public View onCreateView(LayoutInflater inflater,
-                             ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.swipe_refresh_layout, container, false);
         setSwipeLayout(rootView);
         listView = (ListView) rootView.findViewById(R.id.listview1);
@@ -63,13 +60,8 @@ public class RedditReaderFragment extends Fragment implements SwipeRefreshLayout
 	            android.R.color.holo_orange_light, 
 	            android.R.color.holo_red_light);
     }	
-     
-    /**
-     * This method creates the adapter from the list of posts
-     * , and assigns it to the list.
-     */
+
     private void createAdapter(){
-        // Make sure this fragment is still a part of the activity.
         if(getActivity()==null) return;
         adapter=new ArrayAdapter<Post>(getActivity() ,R.layout.post_item, posts){
             @Override
@@ -88,9 +80,7 @@ public class RedditReaderFragment extends Fragment implements SwipeRefreshLayout
 
     @Override
 	public void onRefresh() {
-// 		posts.clear() does work, it creates and empty listview
     	posts.clear();
-//    	Adding more information to posts works
     	new Thread(){
             public void run(){
                 posts.addAll(postsHolder.fetchPosts());
@@ -103,6 +93,37 @@ public class RedditReaderFragment extends Fragment implements SwipeRefreshLayout
 	        }
 	    }, 3000);
 	}
+
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+        currentItemIndex = firstVisibleItem + visibleItemCount;
+        this.totalItemCount = totalItemCount;
+    }
+
+    public void onScrollStateChanged(AbsListView view, int scrollState) {
+        this.currentScrollState = scrollState;
+        this.isScrollCompleted();
+     }
+
+    private void isScrollCompleted() {
+        if (currentItemIndex == totalItemCount && this.currentScrollState == SCROLL_STATE_IDLE) {
+            if(!isLoading){
+                 isLoading = true;
+                 new Thread(){
+                     public void run(){
+                         posts.addAll(postsHolder.fetchMorePosts());
+                         swipeLayout.setRefreshing(true);
+                     }
+             	}.start();
+         		new Handler().postDelayed(new Runnable() {
+         	        @Override public void run() {
+         	            swipeLayout.setRefreshing(false);
+         	            adapter.notifyDataSetChanged();
+         	            isLoading = false;
+         	        }
+         	    }, 2000);
+            }
+        }
+    }
     
     private class getJSONTask extends AsyncTask<String, Void, List<Post>> {
     	
@@ -119,38 +140,5 @@ public class RedditReaderFragment extends Fragment implements SwipeRefreshLayout
 			createAdapter();
 		}
     	
-    }
-
-    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-        currentItemIndex = firstVisibleItem + visibleItemCount;
-        this.totalItemCount = totalItemCount;
-    }
-
-    public void onScrollStateChanged(AbsListView view, int scrollState) {
-        this.currentScrollState = scrollState;
-        this.isScrollCompleted();
-     }
-
-    private void isScrollCompleted() {
-        if (currentItemIndex == totalItemCount && this.currentScrollState == SCROLL_STATE_IDLE) {
-            /*** In this way I detect if there's been a scroll which has completed ***/
-            /*** do the work for load more date! ***/
-            if(!isLoading){
-                 isLoading = true;
-                 new Thread(){
-                     public void run(){
-                         posts.addAll(postsHolder.fetchPosts());
-                         swipeLayout.setRefreshing(true);
-                     }
-             	}.start();
-         		new Handler().postDelayed(new Runnable() {
-         	        @Override public void run() {
-         	            swipeLayout.setRefreshing(false);
-         	            adapter.notifyDataSetChanged();
-         	            isLoading = false;
-         	        }
-         	    }, 2000);
-            }
-        }
     }
 }
