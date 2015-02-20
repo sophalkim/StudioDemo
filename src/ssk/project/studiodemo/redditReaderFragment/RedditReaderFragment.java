@@ -12,11 +12,12 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class RedditReaderFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+public class RedditReaderFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, ListView.OnScrollListener {
 	SwipeRefreshLayout swipeLayout;
 	ListView listView;
     ArrayAdapter<Post> adapter;
@@ -25,6 +26,13 @@ public class RedditReaderFragment extends Fragment implements SwipeRefreshLayout
     String subreddit;
     static List<Post> posts;
     PostsHolder postsHolder;
+    
+    // Variables for automatically loading more reddit posts when user reaches bottom of listview
+    int currentItemIndex = 0;
+    int totalItemCount = 0;
+    int currentScrollState = 0;
+    boolean isLoading = false;
+    
 
     public static Fragment newInstance(String subreddit){
         RedditReaderFragment pf=new RedditReaderFragment();
@@ -42,6 +50,7 @@ public class RedditReaderFragment extends Fragment implements SwipeRefreshLayout
         View rootView = inflater.inflate(R.layout.swipe_refresh_layout, container, false);
         setSwipeLayout(rootView);
         listView = (ListView) rootView.findViewById(R.id.listview1);
+        listView.setOnScrollListener(this);
         new getJSONTask().execute();
         return rootView;
     }
@@ -81,7 +90,7 @@ public class RedditReaderFragment extends Fragment implements SwipeRefreshLayout
 	public void onRefresh() {
 // 		posts.clear() does work, it creates and empty listview
     	posts.clear();
-//    	Adding more information to posts works, let try clearing posts object
+//    	Adding more information to posts works
     	new Thread(){
             public void run(){
                 posts.addAll(postsHolder.fetchPosts());
@@ -110,5 +119,38 @@ public class RedditReaderFragment extends Fragment implements SwipeRefreshLayout
 			createAdapter();
 		}
     	
+    }
+
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+        currentItemIndex = firstVisibleItem + visibleItemCount;
+        this.totalItemCount = totalItemCount;
+    }
+
+    public void onScrollStateChanged(AbsListView view, int scrollState) {
+        this.currentScrollState = scrollState;
+        this.isScrollCompleted();
+     }
+
+    private void isScrollCompleted() {
+        if (currentItemIndex == totalItemCount && this.currentScrollState == SCROLL_STATE_IDLE) {
+            /*** In this way I detect if there's been a scroll which has completed ***/
+            /*** do the work for load more date! ***/
+            if(!isLoading){
+                 isLoading = true;
+                 new Thread(){
+                     public void run(){
+                         posts.addAll(postsHolder.fetchPosts());
+                         swipeLayout.setRefreshing(true);
+                     }
+             	}.start();
+         		new Handler().postDelayed(new Runnable() {
+         	        @Override public void run() {
+         	            swipeLayout.setRefreshing(false);
+         	            adapter.notifyDataSetChanged();
+         	            isLoading = false;
+         	        }
+         	    }, 2000);
+            }
+        }
     }
 }
